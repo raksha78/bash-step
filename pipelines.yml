@@ -4,7 +4,7 @@ resources:
     configuration:
       interval: "0 0/1 * 1/1 *"
 pipelines:
-  - name: bashStep
+  - name: bashStep1
     steps:
       - name: build
         type: Bash

@@ -6,7 +6,7 @@ resources:
   - name:  checkCron
     type: CronTrigger
     configuration:
-      interval: "0/30 * * * * ? *"
+      interval: "*/1 * * * *"
 pipelines:
   - name: bashStep1
     steps:

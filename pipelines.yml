@@ -1,8 +1,8 @@
 resources:
   - name:  checkCron
-     type: CronTrigger
-     configuration:
-       interval: "0 0/1 * 1/1 *"
+    type: CronTrigger
+    configuration:
+      interval: "0 0/1 * 1/1 *"
 pipelines:
   - name: bashStep
     steps:

@@ -1,4 +1,8 @@
 resources:
+  - name: P_Pipelines
+    type: PropertyBag
+    configuration:
+      runNumber: 0
   - name:  checkCron
     type: CronTrigger
     configuration:

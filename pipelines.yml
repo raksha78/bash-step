@@ -13,6 +13,8 @@ pipelines:
       - name: build
         type: Bash
         configuration:
+          inputResources:
+            - name: checkCron
           runtime:
             type: image
             image:

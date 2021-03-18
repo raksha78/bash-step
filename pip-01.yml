@@ -1,0 +1,22 @@
+resources:
+   - name: myAppRepo
+     type: GitRepo
+     configuration:
+       gitProvider: raksha78_github            
+       path: raksha78/bash-step 
+pipelines:
+   - name: try
+     configuration:
+       nodePool: u18_01
+       environmentVariables:
+         readOnly:
+           MY_MESSAGE: '"Hello World!"'
+   steps:
+     - name: step_1
+       type: Bash
+       configuration:
+         inputResources:
+           - name: myAppRepo
+       execution:
+         onExecute:
+           - echo $MY_MESSAGE

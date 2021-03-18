@@ -5,18 +5,18 @@ resources:
        gitProvider: raksha78_github            
        path: raksha78/bash-step 
 pipelines:
-   - name: try
-     configuration:
-       nodePool: u18_01
-       environmentVariables:
-         readOnly:
-           MY_MESSAGE: '"Hello World!"'
-   steps:
-     - name: step_1
-       type: Bash
+     - name: try
        configuration:
-         inputResources:
-           - name: myAppRepo
-       execution:
-         onExecute:
-           - echo $MY_MESSAGE
+          nodePool: u18_01
+          environmentVariables:
+            readOnly:
+              MY_MESSAGE: '"Hello World!"'
+       steps:
+           - name: step_1
+             type: Bash
+             configuration:
+               inputResources:
+                 - name: myAppRepo
+             execution:
+               onExecute:
+                 - echo $MY_MESSAGE

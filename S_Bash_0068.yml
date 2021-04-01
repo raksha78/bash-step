@@ -5,7 +5,7 @@ pipelines:
         type: host
     steps:
       - name: S_Bash_0068
-        type: Bash
+        type: Matrix
         configuration:
           runtimes:
             - type: image

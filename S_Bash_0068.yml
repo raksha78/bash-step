@@ -7,7 +7,7 @@ pipelines:
       - name: S_Bash_0068
         type: Bash
         configuration:
-          runtimes:
+          runtime:
             type: image
             image:
               auto:

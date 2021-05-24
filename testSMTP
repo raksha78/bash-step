@@ -11,5 +11,4 @@ pipelines:
             - send_notification rak_test_smtp --recipients "pipelines.release@gmail.com" --subject "Build Succeeded" --body "Trying to send email "
           onFailure:
             - send_notification rak_test_smtp --recipients "pipelines.release@gmail.com" --subject "Build Failed" --body "Failed to sedn email"
-          onComplete:
-            - # can use send_notification command here
+       

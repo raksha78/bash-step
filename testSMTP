@@ -8,7 +8,7 @@ pipelines:
             - name: rak_test_smtp       # replace with friendly name of your SMTP Credentials integration
         execution:
           onSuccess:
-            - send_notification rak_test_smtp --recipients "pipelines.release@gmail.com" --subject "Build Succeeded" --body "Trying to send email "
+            - send_notification rak_test_smtp --recipients "rakshitha27@gmail.com" --subject "Build Succeeded" --body "Trying to send email "
           onFailure:
             - send_notification rak_test_smtp --recipients "pipelines.release@gmail.com" --subject "Build Failed" --body "Failed to sedn email"
        

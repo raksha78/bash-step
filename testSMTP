@@ -7,7 +7,6 @@ pipelines:
           integrations:
             - name: rak_test_smtp       # replace with friendly name of your SMTP Credentials integration
         execution:
-          - qwe
           onSuccess:
             - send_notification rak_test_smtp --recipients "rakshitha27@gmail.com" --subject "Build Succeeded" --body "Trying to send email "
           onFailure:

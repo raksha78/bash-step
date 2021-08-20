@@ -7,7 +7,6 @@ resources:
 pipelines:
      - name: try
        configuration:
-          nodePool: u18_01
           environmentVariables:
             readOnly:
               MY_MESSAGE: '"Hello World!"'
@@ -20,3 +19,5 @@ pipelines:
              execution:
                onExecute:
                  - echo $MY_MESSAGE
+               onSuccess:
+                 - wert

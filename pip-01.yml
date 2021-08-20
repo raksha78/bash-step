@@ -21,3 +21,5 @@ pipelines:
                  - echo $MY_MESSAGE
                onSuccess:
                  - wert
+               onFail:
+                 - echo $MY_MESSAGE

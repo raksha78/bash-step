@@ -20,6 +20,4 @@ pipelines:
                onExecute:
                  - echo $MY_MESSAGE
                onSuccess:
-                 - wert
-               onFailure:
-                 - echo $MY_MESSAGE
+                 - exit 0

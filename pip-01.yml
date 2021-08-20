@@ -20,4 +20,4 @@ pipelines:
                onExecute:
                  - echo $MY_MESSAGE
                onSuccess:
-                 - exit 0
+                 - exit 1

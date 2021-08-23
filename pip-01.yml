@@ -19,5 +19,3 @@ pipelines:
              execution:
                onExecute:
                  - echo $MY_MESSAGE
-               onSuccess:
-                 - exit 1

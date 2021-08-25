@@ -9,3 +9,9 @@ pipelines:
           onExecute:
             - echo "This is my step."
             - sleep 2m
+      - name: my_step_1
+        type: Bash
+        execution:
+          onExecute:
+            - echo "This is my second step."
+          

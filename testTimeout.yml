@@ -1,0 +1,11 @@
+pipelines:
+  - name: my_pipeline
+    steps:
+      - name: my_step
+        type: Bash
+        configuration:
+          timeoutSeconds: 60
+        execution:
+          onExecute:
+            - echo "This is my step."
+            - sleep 2m

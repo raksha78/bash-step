@@ -1,5 +1,5 @@
 pipelines:
-  - name: my_pipeline_check
+  - name: my_pipeline_check_test
     steps:
       - name: my_step
         type: Bash

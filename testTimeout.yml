@@ -11,7 +11,7 @@ resources:
        path: raksha78/bash-step
 
 pipelines:
-  - name: my_pipeline_check_test
+  - name: my_pipeline_check_test_1
     steps:
       - name: my_step
         type: Bash

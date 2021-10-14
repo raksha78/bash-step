@@ -4,6 +4,11 @@ resources:
      configuration:
        gitProvider: raksha78_github           
        path: raksha78/bash-step
+   - name: oneRes_10112
+     type: GitRepo
+     configuration:
+       gitProvider: raksha78_github           
+       path: raksha78/bash-step
 
 pipelines:
   - name: my_pipeline_check_test

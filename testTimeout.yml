@@ -1,5 +1,5 @@
 resources:
-   - name: oneRes_101
+   - name: oneRes_1011
      type: GitRepo
      configuration:
        gitProvider: raksha78_github           
@@ -15,7 +15,7 @@ pipelines:
           inputSteps:
             - name: my_step_1
           inputResources:
-            - name: oneRes_101
+            - name: oneRes_1011
         execution:
           onExecute:
             - echo "This is my step."

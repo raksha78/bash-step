@@ -17,7 +17,6 @@ pipelines:
           integrations:
             - name: rak_test_slack      
         execution:
-          onExecute:
           onSuccess:
              - echo 'Hi'
           onFailure: *onFailure

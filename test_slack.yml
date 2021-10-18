@@ -8,9 +8,9 @@ pipelines:
             - name: rak_test_slack      
         execution:
           onExecute:
-            - send_notification mySlack --text "pipeline_name failed in step step_name at step_url"
+            - send_notification rak_test_slack "pipeline_name failed in step step_name at step_url"
           onSuccess:
-            - send_notification rak_test_slack mySlack --text "onSuccess" 
+            - send_notification rak_test_slack 
           onFailure:
-            - send_notification rak_test_slack
+            - send_notification rak_test_slack  --text "pipeline_name failed in step step_name at step_url"
           

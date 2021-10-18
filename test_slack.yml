@@ -20,6 +20,8 @@ pipelines:
         configuration:
           inputSteps:
             - name: test_step_2
+              status:
+                  - failure
           integrations:
             - name: rak_test_slack      
         execution:

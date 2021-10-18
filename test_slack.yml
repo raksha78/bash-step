@@ -9,6 +9,7 @@ pipelines:
         execution:
           onExecute:
             - send_notification rak_test_slack 
+            - aaa
 #           onSuccess:
 #             - send_notification rak_test_slack 
           onFailure:

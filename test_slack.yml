@@ -21,7 +21,7 @@ pipelines:
              - echo 'Hi'
           onFailure: *onFailure
       - name: test_step_2
-        type: Bash
+        type: Bash_test
         configuration:
           inputSteps:
             - name: test_step_4

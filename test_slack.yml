@@ -21,8 +21,10 @@ pipelines:
              - echo 'Hi'
           onFailure: *onFailure
       - name: test_step_2
-        type: Bash_test
+        type: Bash
         configuration:
+          nodePool:
+            - name: test
           inputSteps:
             - name: test_step_4
           integrations:

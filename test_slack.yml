@@ -1,6 +1,20 @@
+onFailure: &onFailure
+   - send_notification rak_test_slack  --text "Pipeline - $pipeline_name \n Step - $step_name \n Status - Failure \n URL - $step_url"
+
 pipelines:
   - name: pipe1
     steps:
+      - name: test_step_2
+        type: Bash
+        configuration:
+          integrations:
+            - name: rak_test_slack      
+        execution:
+          onExecute:
+            - aaa
+#           onSuccess:
+#             - send_notification rak_test_slack 
+          onFailure: *onFailure
       - name: test_step_1
         type: Bash
         configuration:
@@ -11,6 +25,6 @@ pipelines:
             - aaa
 #           onSuccess:
 #             - send_notification rak_test_slack 
-          onFailure:
-            - send_notification rak_test_slack  --text "Pipeline - $pipeline_name \n Step - $step_name \n Status - Failure \n URL - $step_url"
-          
+          onFailure: *onFailure
+  
+            

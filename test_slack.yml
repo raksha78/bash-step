@@ -1,12 +1,31 @@
 onFailure: &onFailure
    - send_notification rak_test_slack  --text "Pipeline - $pipeline_name \n Step - $step_name \n Status - Failure \n URL - $step_url"
 
+conditionalStepStatus: &conditionalStepStatus
+  - success
+  - failure
+  - error
+  - skipped
+
+
 pipelines:
   - name: pipe1
     steps:
+      - name: test_step_4
+        type: Bash
+        configuration:
+          integrations:
+            - name: rak_test_slack      
+        execution:
+          onExecute:
+          onSuccess:
+             - echo 'Hi'
+          onFailure: *onFailure
       - name: test_step_2
         type: Bash
         configuration:
+          inputSteps:
+            - name: test_step_4
           integrations:
             - name: rak_test_slack      
         execution:
@@ -20,9 +39,9 @@ pipelines:
         configuration:
           inputSteps:
             - name: test_step_2
-              status:
-                  - failure
-                  - skipped
+              status: *conditionalStepStatus
+            - name: test_step_4
+              status: *conditionalStepStatus
           integrations:
             - name: rak_test_slack      
         execution:

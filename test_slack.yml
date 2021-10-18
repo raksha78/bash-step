@@ -5,7 +5,6 @@ conditionalStepStatus: &conditionalStepStatus
   - success
   - failure
   - error
-  - skipped
 
 
 pipelines:

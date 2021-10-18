@@ -22,6 +22,7 @@ pipelines:
             - name: test_step_2
               status:
                   - failure
+                  - skipped
           integrations:
             - name: rak_test_slack      
         execution:

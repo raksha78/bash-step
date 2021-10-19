@@ -28,7 +28,7 @@ pipelines:
       - name: test_step_2
         type: Bash
         configuration:
-          nodePool: test
+#           nodePool: test
           inputSteps:
             - name: test_step_4
           integrations:

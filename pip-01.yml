@@ -5,7 +5,7 @@ resources:
        gitProvider: raksha78_github            
        path: raksha78/bash-step 
 pipelines:
-     - name: test$try
+     - name: test_try
        configuration:
 #           nodePool: u18_01
           environmentVariables:

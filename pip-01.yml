@@ -5,9 +5,9 @@ resources:
        gitProvider: raksha78_github            
        path: raksha78/bash-step 
 pipelines:
-     - name: try
+     - name: $try
        configuration:
-          nodePool: u18_01
+#           nodePool: u18_01
           environmentVariables:
             readOnly:
               MY_MESSAGE: '"Hello World!"'

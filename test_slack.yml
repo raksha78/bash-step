@@ -1,5 +1,5 @@
 onFailure: &onFailure
-   - send_notification rak_test_slack  --text "Pipeline - $pipeline_name \n Step - $step_name \n Status - Failure \n URL - $step_url"
+   - send_notification rak_test_slack  --text "Pipeline - $pipeline_name \n Step - $step_name \n Status - Failure \n URL - $step_url \n Test Instance - $JPD_URL"
 
 conditionalStepStatus: &conditionalStepStatus
   - success
@@ -9,6 +9,12 @@ conditionalStepStatus: &conditionalStepStatus
 
 pipelines:
   - name: pipe1
+    configuration:
+      environmentVariables:
+        readOnly:
+          #configs info
+          #set this removeConfFile env to true to delete the Conf.json file
+          JPD_URL: "hello"
     steps:
       - name: test_step_4
         type: Bash

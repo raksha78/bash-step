@@ -1,26 +1,11 @@
-artifactoryIntegration: myArtifactoryIntegration
- 
-GitRepo:
-  name: myGitRepo
-  gitProvider: myGitIntegration
-  path: myorg/myrepo
-  branches:
-    include: master
- 
-Image:
-  name: myDockerImage
-  sourceRepository: mySourceRepo     
- 
 Pipeline:
   name: myDockerPipeline
  
-DockerBuild:
-  name: myDockerBuild  
-  dockerFileName: Dockerfile
-  dockerImageName: <image name>
- 
-DockerPush:
-  targetRepository: docker-local
- 
-Bash:
-  name: myBashStep
+step1:
+  name: step1
+
+step2:
+  name: step2
+  input: step1
+
+  

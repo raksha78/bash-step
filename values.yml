@@ -1,11 +1,9 @@
 Pipeline:
   name: myDockerPipeline
  
-step1:
-  name: step1
-
-step2:
-  name: step2
-  input: step1
-
+steps:
+  - name: step1
+    input: main
+  - name: step2
+    input: step1
   

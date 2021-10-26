@@ -4,16 +4,18 @@ valuesFilePath: ./values.yml # required for local templates. DO NOT SPECIFY for 
 pipelines:
   - name: {{ .Values.Pipeline.name }}
     steps:
-      - name:  {{ .Values.step1.name }}
+      - name: main
         type: Bash
-        execution:         
+        execution:
           onExecute:
             - echo "Queuing steps for execution under node tests "
-      - name:  {{ .Values.step2.name }}
+      {{- range .Values.steps }}
+      - name: {{ .name }}
         type: Bash
         configuration:
           inputSteps:
-            - name:  {{ .Values.step2.input }}
-        execution:         
+            - name: {{ .input }}
+        execution:
           onExecute:
             - echo "Queuing steps for execution under node tests "
+      {{- end }}

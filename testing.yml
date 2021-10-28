@@ -13,7 +13,9 @@ pipelines:
             - echo "Queuing steps for execution under node tests "
       {{- range .Values.test }}
         {{ if eq .name "core" }}
-        {{- range .children }} 
+         {{- range .children }} 
+          {{ if eq .type "directory" }} 
+           {{- range .children }} 
       - name: {{ .name }}
         type: Bash
         configuration:
@@ -22,6 +24,17 @@ pipelines:
         execution:
           onExecute:
             - echo "Queuing steps for execution under node tests "
+        {{ end }}
+        {{ else }}
+      - name: {{ .name }}
+        type: Bash
+        configuration:
+          inputSteps:
+            - name: main
+        execution:
+          onExecute:
+            - echo "Queuing steps for execution under node tests "
+        {{ end }}
         {{ end }}
         {{ end }}
       {{- end }}

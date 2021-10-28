@@ -38,7 +38,7 @@
         - *a3
         type: directory
     - path: ./core
-        name: core
-        children:
+      name: core
+      children:
         - *a33
-        type: directory
+      type: directory

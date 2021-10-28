@@ -16,7 +16,7 @@ pipelines:
         type: Bash
         configuration:
           inputSteps:
-            - name: .Values.test
+            - name: core
         execution:
           onExecute:
             - echo "Queuing steps for execution under node tests "

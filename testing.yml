@@ -7,9 +7,9 @@ valuesFilePath: ./path.yml # required for local templates. DO NOT SPECIFY for sy
 pipelines:
   - name: "yoo"
     steps:
-   {{- define "testFunc" }}
-     {{- $arg1 := index . 0 }}
-     {{- $arg2 := index . 1 }}
+   {{ define "testFunc" }}
+     {{ $arg1 := index . 0 }}
+     {{ $arg2 := index . 1 }}
       - name: {{ $arg1 }}
         type: Bash
         configuration:
@@ -40,7 +40,7 @@ pipelines:
           {{ $input := .name }}
           {{ $chi := .children }} 
           {{ if eq .type "directory" }} 
-               {{- include "testFunc" (list $input $.chi) }}
+               {{ include "testFunc" (list $input $.chi) }}
           {{ else }}
       - name: {{ .name }}
         type: Bash

@@ -14,14 +14,14 @@ pipelines:
       {{- range .Values.test }}
         {{ if eq .name "core" }}
          {{- range .children }}
-          $input := .name;
+          {{ $input := .name }}
           {{ if eq .type "directory" }} 
              {{- range .children }} 
       - name: {{ .name }}
         type: Bash
         configuration:
           inputSteps:
-            - name: $input
+            - name: {{ $input }}
         execution:
           onExecute:
             - echo "Queuing steps for execution under node tests "
@@ -31,7 +31,7 @@ pipelines:
         type: Bash
         configuration:
           inputSteps:
-            - name: $input
+            - name: {{ $input }}
         execution:
           onExecute:
             - echo "Queuing steps for execution under node tests "

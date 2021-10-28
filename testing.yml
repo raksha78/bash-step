@@ -16,6 +16,14 @@ pipelines:
          {{- range .children }}
           {{ $input := .name }}
           {{ if eq .type "directory" }} 
+       - name: {{ .name }}
+        type: Bash
+        configuration:
+          inputSteps:
+            - name: main
+        execution:
+          onExecute:
+            - echo "Queuing steps for execution under node tests "
              {{- range .children }} 
       - name: {{ .name }}
         type: Bash

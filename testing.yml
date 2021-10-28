@@ -6,17 +6,17 @@ valuesFilePath: ./path.yml # required for local templates. DO NOT SPECIFY for sy
 pipelines:
   - name: "yoo"
     steps:
-      - name: main
+      - name: core
         type: Bash
         execution:
           onExecute:
             - echo "Queuing steps for execution under node tests "
-      {{- range .Values.test }}
+      {{- range .Values.test.children }}
       - name: {{ .name }}
         type: Bash
         configuration:
           inputSteps:
-            - name: main
+            - name: .Values.test
         execution:
           onExecute:
             - echo "Queuing steps for execution under node tests "

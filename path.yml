@@ -1,4 +1,4 @@
-  test:
+  test: 
     - &a1
         path: core/multibranch/generic
         name: generic
@@ -37,7 +37,7 @@
         - *a2
         - *a3
         type: directory
-    - path: ./core
+          path: ./core
       name: core
       children:
         - *a33

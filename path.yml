@@ -12,7 +12,7 @@
         name: validateEntitlementsValues.js
         type: file
     type: directory
-     - &a1
+  - &a1
     path: core/multibranch/generic
     name: generic
     children:

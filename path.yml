@@ -1,44 +1,44 @@
   test:
-  - &a1
-    path: core/multibranch/generic
-    name: generic
-    children:
-      - path: core/multibranch/generic/genericMultibranch.js
-        name: genericMultibranch.js
-        type: file
-    type: directory
-  - &a2
-    path: core/multibranch/pipelines
-    name: pipelines
-    children:
-      - path: core/multibranch/pipelines/pipelines.js
-        name: pipelines.js
-        type: file
-      - path: core/multibranch/pipelines/search.js
-        name: search.js
-        type: file
-    type: directory
-  - &a3
-    path: core/multibranch/resources
-    name: resources
-    children:
-      - path: core/multibranch/resources/IncomingWebhook.js
-        name: IncomingWebhook.js
-        type: file
-    type: directory
-  - &a33
-    path: core/multibranch
-    name: multibranch
-    children:
-      - *a1
-      - path: core/multibranch/pipelineSources.js
-        name: pipelineSources.js
-        type: file
-      - *a2
-      - *a3
-    type: directory
- - path: ./core
-    name: core
-    children:
-      - *a33
-    type: directory
+    - &a1
+        path: core/multibranch/generic
+        name: generic
+        children:
+        - path: core/multibranch/generic/genericMultibranch.js
+            name: genericMultibranch.js
+            type: file
+        type: directory
+    - &a2
+        path: core/multibranch/pipelines
+        name: pipelines
+        children:
+        - path: core/multibranch/pipelines/pipelines.js
+            name: pipelines.js
+            type: file
+        - path: core/multibranch/pipelines/search.js
+            name: search.js
+            type: file
+        type: directory
+    - &a3
+        path: core/multibranch/resources
+        name: resources
+        children:
+        - path: core/multibranch/resources/IncomingWebhook.js
+            name: IncomingWebhook.js
+            type: file
+        type: directory
+    - &a33
+        path: core/multibranch
+        name: multibranch
+        children:
+        - *a1
+        - path: core/multibranch/pipelineSources.js
+            name: pipelineSources.js
+            type: file
+        - *a2
+        - *a3
+        type: directory
+    - path: ./core
+        name: core
+        children:
+        - *a33
+        type: directory

@@ -11,8 +11,8 @@ pipelines:
         execution:
           onExecute:
             - echo "Queuing steps for execution under node tests "
-      {{- range .Values.children }}
-      - name: {{ .name }}
+      {{- range .Values.test }}
+      - name: {{ children.name }}
         type: Bash
         configuration:
           inputSteps:

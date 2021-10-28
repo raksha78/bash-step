@@ -16,7 +16,7 @@ pipelines:
          {{- range .children }}
           {{ $input := .name }}
           {{ if eq .type "directory" }} 
-       - name: {{ .name }}
+      - name: {{ .name }}
         type: Bash
         configuration:
           inputSteps:

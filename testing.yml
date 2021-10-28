@@ -18,7 +18,7 @@ pipelines:
         execution:
           onExecute:
             - echo "Queuing steps for execution under node tests "
-             {{- range $arg1 }} 
+             {{- range $chi }} 
       - name: {{ .name }}
         type: Bash
         configuration:

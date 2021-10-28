@@ -31,9 +31,9 @@
         name: multibranch
         children:
         - *a1
-          - path: core/multibranch/pipelineSources.js
-            name: pipelineSources.js
-            type: file
+        - path: core/multibranch/pipelineSources.js
+          name: pipelineSources.js
+          type: file
         - *a2
         - *a3
         type: directory

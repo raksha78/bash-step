@@ -2,10 +2,31 @@
    
 template: true   # required for local templates   
 valuesFilePath: ./path.yml # required for local templates. DO NOT SPECIFY for system level templates
-    
+
+
 pipelines:
   - name: "yoo"
     steps:
+    {{- define "testFunc" }}
+      - name: {{ $arg1 }}
+        type: Bash
+        configuration:
+          inputSteps:
+            - name: main
+        execution:
+          onExecute:
+            - echo "Queuing steps for execution under node tests "
+             {{- range $arg1 }} 
+      - name: {{ .name }}
+        type: Bash
+        configuration:
+          inputSteps:
+            - name: {{ $arg1 }}
+        execution:
+          onExecute:
+            - echo "Queuing steps for execution under node tests "
+             {{ end }}
+    {{- end }}
       - name: main
         type: Bash
         execution:
@@ -15,25 +36,9 @@ pipelines:
         {{ if eq .name "core" }}
          {{- range .children }}
           {{ $input := .name }}
+          {{ $chi := .children }} 
           {{ if eq .type "directory" }} 
-      - name: {{ .name }}
-        type: Bash
-        configuration:
-          inputSteps:
-            - name: main
-        execution:
-          onExecute:
-            - echo "Queuing steps for execution under node tests "
-             {{- range .children }} 
-      - name: {{ .name }}
-        type: Bash
-        configuration:
-          inputSteps:
-            - name: {{ $input }}
-        execution:
-          onExecute:
-            - echo "Queuing steps for execution under node tests "
-             {{ end }}
+               {{- include "testFunc" (list $input $.chi) }}
           {{ else }}
       - name: {{ .name }}
         type: Bash

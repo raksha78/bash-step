@@ -14,7 +14,7 @@ pipelines:
       {{- range .Values.test }}
         {{ if eq .name "core" }}
         {{- range .children }} 
-      - name: {{ .children.name }}
+      - name: {{ .name }}
         type: Bash
         configuration:
           inputSteps:

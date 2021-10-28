@@ -1,17 +1,3 @@
-  - path: ./core
-    name: core
-    children:
-      - *a31
-      - *a33
-    type: directory
-  - &a31
-    path: core/entitlements
-    name: entitlements
-    children:
-      - path: core/entitlements/validateEntitlementsValues.js
-        name: validateEntitlementsValues.js
-        type: file
-    type: directory
   - &a1
     path: core/multibranch/generic
     name: generic
@@ -49,4 +35,9 @@
         type: file
       - *a2
       - *a3
+    type: directory
+  - path: ./core
+    name: core
+    children:
+      - *a33
     type: directory

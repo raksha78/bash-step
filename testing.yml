@@ -40,7 +40,7 @@ pipelines:
           {{ $input := .name }}
           {{ $chi := .children }} 
           {{ if eq .type "directory" }} 
-               {{ include "testFunc" (list $input $.chi) }}
+               {{ include "toYaml" "testFunc" (list $input $.chi) }}
           {{ else }}
       - name: {{ .name }}
         type: Bash

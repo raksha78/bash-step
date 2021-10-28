@@ -1,0 +1,23 @@
+
+   
+template: true   # required for local templates   
+valuesFilePath: ./path.yml # required for local templates. DO NOT SPECIFY for system level templates
+    
+pipelines:
+  - name: "yoo"
+    steps:
+      - name: main
+        type: Bash
+        execution:
+          onExecute:
+            - echo "Queuing steps for execution under node tests "
+      {{- range .Values.children }}
+      - name: {{ .name }}
+        type: Bash
+        configuration:
+          inputSteps:
+            - name: main
+        execution:
+          onExecute:
+            - echo "Queuing steps for execution under node tests "
+      {{- end }}

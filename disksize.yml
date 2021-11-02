@@ -1,0 +1,39 @@
+pipelines:
+  - name: pipelines
+    steps:
+      - name: test
+        type: Bash
+        configuration: 
+          nodePool: u16dynamic  
+        execution:
+          onExecute:
+            - echo "executing step..."
+            - df -h
+            - docker images        
+            - cd /opt
+            - pwd
+            - docker images
+            - df -h
+            - fallocate -l 10G huge_file.dat
+            - df -h
+            - fallocate -l 10G huge_file.dat1
+            - df -h
+            - fallocate -l 10G huge_file.dat2
+            - fallocate -l 10G huge_file.dat13
+            - df -h
+            - fallocate -l 1G huge_file.dat3
+            - df -h
+            - fallocate -l 5G huge_file.dat4
+            - df -h
+            - fallocate -l 10G huge_file.dat5
+            - fallocate -l 5G huge_file.dat11
+            - df -h
+            - fallocate -l 10G huge_file.dat12
+            - df -h
+            - fallocate -l 1G huge_file.dat6
+            - fallocate -l 1G huge_file.dat7
+            - df -h
+            - fallocate -l 1G huge_file.dat8
+            - df -h
+            - fallocate -l 1G huge_file.dat9
+            - df -h

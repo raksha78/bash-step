@@ -7,7 +7,6 @@ resources:
 pipelines:
      - name: test_try
        configuration:
-          nodePool: u18dynamic
           environmentVariables:
             readOnly:
               MY_MESSAGE: '"Hello World!"'

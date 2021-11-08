@@ -1,5 +1,5 @@
 resources:
-   - name: myAppRepo
+   - name: myAppRepo_001
      type: GitRepo
      configuration:
        gitProvider: raksha78_github            
@@ -15,7 +15,7 @@ pipelines:
              type: Bash
              configuration:
                inputResources:
-                 - name: myAppRepo
+                 - name: myAppRepo_001
              execution:
                onExecute:
                  - echo $MY_MESSAGE

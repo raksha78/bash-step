@@ -1,6 +1,6 @@
 template: true   # required for local templates   
 valuesFilePath: ./values.yml # required for local templates. DO NOT SPECIFY for system level templates
-key1: "hello"
+key1: ["hello"]
 pipelines:
   - name: {{ .Values.Pipeline.name }}
     steps:

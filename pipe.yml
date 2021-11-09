@@ -1,7 +1,7 @@
 template: true   # required for local templates   
 valuesFilePath: ./values.yml # required for local templates. DO NOT SPECIFY for system level templates
-key1: 
-  - "hello"
+key:
+  - string1
   
 pipelines:
   - name: {{ .Values.Pipeline.name }}
@@ -12,7 +12,7 @@ pipelines:
           onExecute:
             - echo "Queuing steps for execution under node tests "
       {{- range .Values.steps }}
-      {{ if ne .name {{- range .Values.key1 }} }}
+      {{ if ne .name {{- range .Values.key }} }}
       - name: {{ .name }}
         type: Bash
         configuration:

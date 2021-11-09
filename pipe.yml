@@ -10,7 +10,7 @@ pipelines:
           onExecute:
             - echo "Queuing steps for execution under node tests "
       {{- range .Values.steps }}
-      {{ ne .name "hello" }}
+      {{ if eq(ne .name "hello") true }}
       - name: {{ .name }}
         type: Bash
         configuration:
@@ -19,4 +19,5 @@ pipelines:
         execution:
           onExecute:
             - echo "Queuing steps for execution under node tests "
+      {{- end }}
       {{- end }}

@@ -6,11 +6,11 @@ pipelines:
   - name: "yoo"
     steps:
       {{- range .Values.steps }} 
-      {{ if ne .name {{- range key1 }} }}
+#       {{ if ne .name {{- range key1 }} }}
       - name: {{ .name }}
         type: Bash
         execution:
           onExecute:
             - echo "Queuing steps for execution under node tests "
-      {{ end }}
+#       {{ end }}
       {{ end }}

@@ -1,3 +1,4 @@
+resources:
   - name: A_CWF_res
     type: PropertyBag
     configuration:

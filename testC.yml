@@ -1,0 +1,37 @@
+  - name: A_CWF_res
+    type: PropertyBag
+    configuration:
+      key1: value1
+
+pipelines:
+  - name: A_CWF_6665_pipeline
+    steps:
+      - name: A_CWF_6665_BASH_1
+        type: Bash
+        configuration:
+          outputResources:
+            - name: A_CWF_res
+        execution:
+          onExecute:
+            - echo "executing A_CWF_6665_BASH_1..."
+      - name: A_CWF_6665_BASH_2
+        type: Bash
+        configuration:
+          inputResources:
+            - name: A_CWF_res
+              newVersionOnly: true
+          inputSteps:
+            - name: A_CWF_6665_BASH_1
+        execution:
+          onExecute:
+            - echo "executing A_CWF_6665_BASH_2..."
+      - name: A_CWF_6665_BASH_3
+        type: Bash
+        configuration:
+          inputSteps:
+            - name: A_CWF_6665_BASH_2
+              status:
+              - skipped
+        execution:
+          onExecute:
+            - echo "executing A_CWF_6665_BASH_3..."

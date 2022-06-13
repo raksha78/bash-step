@@ -1,0 +1,62 @@
+pipelines:
+  - name: approval_gates
+    steps:
+      - name: random_approval_test
+        type: Bash
+        configuration:
+          requiresApproval: true
+        execution:
+          onExecute:
+            - echo "someboody approved this"
+      - name: specific_approval_test
+        type: Bash
+        configuration:
+          requiresApproval:
+            approvers:
+              - rakshithagr
+              - admin
+              - rakshithagr
+              - admin
+              - rakshithagr
+              - admin
+              - rakshithagr
+              - admin
+              - rakshithagr
+              - admin
+              - rakshithagr
+              - admin
+              - rakshithagr
+              - admin
+              - rakshithagr
+              - admin
+              - rakshithagr
+              - admin
+              - rakshithagr
+              - admin
+              - rakshithagr
+              - admin
+              - rakshithagr
+              - admin
+              - rakshithagr
+              - admin
+              - rakshithagr
+              - admin
+              - rakshithagr
+              - admin
+              - rakshithagr
+              - admin
+              - rakshithagr
+              - admin
+              - rakshithagr
+              - admin
+              - rakshithagr
+              - admin
+              - rakshithagr
+              - admin
+              - rakshithagr
+              - admin
+          inputSteps:
+            - name: random_approval_test
+        execution:
+          onExecute:
+            - echo "someboody approved this"

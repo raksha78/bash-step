@@ -1,5 +1,5 @@
 pipelines:
-  - name: S_B_Jen
+  - name: S_B
     steps:
       - name: S_B_Jen_2
         type: Jenkins

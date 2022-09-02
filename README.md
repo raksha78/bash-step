@@ -18,16 +18,6 @@ webhookWithresourcesjpd656400121.jfrogdev.orgjpd656400121.jfrogdev.org
 webhookWithresou
 webhookWithresources
 webhookWithresources
-webhookWithresources
-
-webhookWithresourceskWithresou
-webhookWithresources
-
-
-
-
-
-webhookWithresources# bash-step - need webhook
 
 
 
